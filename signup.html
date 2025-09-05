@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .signup-form {
+      background-color: #ffffff;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      animation: formFadeIn 1s ease-out;
+      text-align: center;
+    }
+
+    .signup-form h2 {
+      color: #333;
+      font-size: 26px;
+      margin-bottom: 25px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .signup-form input {
+      width: 100%;
+      padding: 12px 10px;
+      margin: 10px 0;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .signup-form input:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+    }
+
+    .signup-form input:hover {
+      border-color: #4CAF50;
+    }
+
+    .signup-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      animation: buttonAnimation 1.5s infinite;
+      margin-top: 10px;
+    }
+
+    .signup-form button:hover {
+      background-color: #45a049;
+    }
+
+    .logout-link {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #e74c3c;
+      padding: 10px 15px;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-link:hover {
+      background-color: #c0392b;
+    }
+
+    @keyframes formFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes buttonAnimation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.03);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/signup" method="POST" class="signup-form">
+    <h2>Sign Up</h2>
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <button type="submit">Sign Up</button>
+    <a href="/logout" class="logout-link">Logout</a>
+  </form>
+
+</body>
+</html>
